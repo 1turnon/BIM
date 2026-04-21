@@ -303,7 +303,6 @@
       cursor: pointer;
     }
 
-    /* IMPORTANTE: oculto por defecto para desktop */
     .nav-menu-mobile {
       display: none;
     }
@@ -903,24 +902,76 @@
     }
 
     /* =========================================================
+    BLOQUE 11A — CLIENTES
+    ========================================================== */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .client-logo {
+      min-height: 120px;
+      border-radius: 20px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .client-logo:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125,211,252,0.28);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+    }
+
+    .client-logo img {
+      max-width: 100%;
+      max-height: 56px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(1.15);
+      opacity: 0.9;
+      transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .client-logo:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.03);
+    }
+
+    /* =========================================================
     BLOQUE 12 — PORTAFOLIO
     ========================================================== */
     .portfolio-image {
       height: 240px;
       border-radius: 18px;
       margin-bottom: 18px;
-      background-size: cover;
-      background-position: center;
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .portfolio-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 20%, rgba(4,10,18,0.72) 100%);
+      background: linear-gradient(180deg, transparent 20%, rgba(4,10,18,0.42) 100%);
+      pointer-events: none;
     }
 
     .portfolio-tag {
@@ -1099,6 +1150,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .cta-actions {
         justify-content: flex-start;
       }
@@ -1175,7 +1230,8 @@
       .metrics-grid,
       .portfolio-grid,
       .process-grid,
-      .trust-points {
+      .trust-points,
+      .clients-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1212,6 +1268,15 @@
         padding: 24px;
       }
 
+      .client-logo {
+        min-height: 100px;
+        padding: 18px;
+      }
+
+      .client-logo img {
+        max-height: 44px;
+      }
+
       .footer-row {
         flex-direction: column;
         align-items: flex-start;
@@ -1235,6 +1300,7 @@
         <div class="nav-links">
           <a href="#services" data-i18n="nav_services">Servicios</a>
           <a href="#metrics" data-i18n="nav_capabilities">Capacidades</a>
+          <a href="#clients" data-i18n="nav_clients">Clientes</a>
           <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
           <a href="#process" data-i18n="nav_process">Proceso</a>
           <a href="#contact" data-i18n="nav_contact">Contacto</a>
@@ -1256,6 +1322,7 @@
         <button class="lang-btn" data-lang="en">English</button>
         <a href="#services" data-i18n="nav_services">Servicios</a>
         <a href="#metrics" data-i18n="nav_capabilities">Capacidades</a>
+        <a href="#clients" data-i18n="nav_clients">Clientes</a>
         <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
         <a href="#process" data-i18n="nav_process">Proceso</a>
         <a href="#contact" data-i18n="nav_contact">Contacto</a>
@@ -1478,6 +1545,42 @@
     </section>
 
     <!-- =========================================================
+    BLOQUE 22A — CLIENTES
+    ========================================================== -->
+    <section class="section" id="clients">
+      <div class="container">
+        <div class="eyebrow reveal" data-i18n="clients_eyebrow">Clientes</div>
+        <h2 class="section-title reveal" data-i18n="clients_title">
+          Empresas y profesionales que han confiado en nuestro trabajo
+        </h2>
+        <p class="section-subtitle reveal" data-i18n="clients_subtitle">
+          Este espacio muestra algunas marcas, aliados y clientes con los que hemos colaborado.
+        </p>
+
+        <div class="clients-grid">
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-1.png" alt="Cliente 1" />
+          </div>
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-2.png" alt="Cliente 2" />
+          </div>
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-3.png" alt="Cliente 3" />
+          </div>
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-4.png" alt="Cliente 4" />
+          </div>
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-5.png" alt="Cliente 5" />
+          </div>
+          <div class="client-logo reveal">
+            <img src="./assets/logos/cliente-6.png" alt="Cliente 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
     BLOQUE 23 — PORTAFOLIO
     ========================================================== -->
     <section class="section" id="portfolio">
@@ -1492,9 +1595,9 @@
 
         <div class="portfolio-grid">
           <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="portfolio-image">
+              <img src="./assets/img/portfolio-bim.png" alt="Proyecto BIM" />
+            </div>
             <h3 data-i18n="portfolio_1_title">BIM y modelado técnico</h3>
             <p data-i18n="portfolio_1_text">
               Modelos orientados a documentación, coordinación y lectura clara del proyecto.
@@ -1503,9 +1606,9 @@
           </article>
 
           <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="portfolio-image">
+              <img src="./assets/img/portfolio-geotecnia.png" alt="Proyecto geotécnico" />
+            </div>
             <h3 data-i18n="portfolio_2_title">Geotecnia y soluciones constructivas</h3>
             <p data-i18n="portfolio_2_text">
               Apoyo visual para muros, anclajes, detalles y documentación de ingeniería.
@@ -1514,9 +1617,9 @@
           </article>
 
           <article class="portfolio-card reveal">
-            <div class="portfolio-image" style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="portfolio-image">
+              <img src="./assets/img/portfolio-renders.png" alt="Renderizado arquitectónico" />
+            </div>
             <h3 data-i18n="portfolio_3_title">Renderizados y visualización</h3>
             <p data-i18n="portfolio_3_text">
               Presentaciones visuales para mostrar mejor el valor del proyecto.
@@ -1605,7 +1708,7 @@
         <div class="eyebrow reveal" data-i18n="contact_eyebrow">Contacto</div>
         <h2 class="section-title reveal" data-i18n="contact_title">Conversemos sobre tu próximo proyecto</h2>
         <p class="section-subtitle reveal" data-i18n="contact_subtitle">
-          Personaliza aquí tu correo, tu WhatsApp y tu ubicación de trabajo.
+          Escríbenos y recibe una respuesta por correo o WhatsApp.
         </p>
 
         <div class="contact-grid">
@@ -1618,13 +1721,13 @@
             <div class="contact-list">
               <div class="contact-item">
                 <small data-i18n="contact_email_label">Email</small>
-                <a href="mailto:tuemail@email.com">tuemail@email.com</a>
+                <a href="mailto:juanmreira.98@gmail.com">juanmreira.98@gmail.com</a>
               </div>
 
               <div class="contact-item">
                 <small>WhatsApp</small>
-                <a href="https://wa.me/50600000000" target="_blank" rel="noopener noreferrer">
-                  +506 0000 0000
+                <a href="https://wa.me/50684315855" target="_blank" rel="noopener noreferrer">
+                  +506 8431 5855
                 </a>
               </div>
 
@@ -1637,11 +1740,22 @@
 
           <div class="contact-panel reveal">
             <h3 data-i18n="contact_form_title">Solicita una propuesta</h3>
-            <form class="contact-form" onsubmit="handleForm(event)">
-              <input type="text" id="nameInput" placeholder="Nombre" required />
-              <input type="email" id="emailInput" placeholder="Correo electrónico" required />
-              <input type="text" id="companyInput" placeholder="Empresa o tipo de proyecto" />
-              <textarea id="messageInput" placeholder="Cuéntame brevemente qué necesitas"></textarea>
+
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/juanmreira.98@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Nuevo contacto desde BIM Global Studio">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://TU-USUARIO.github.io/TU-REPO/thanks.html">
+
+              <input type="text" id="nameInput" name="nombre" placeholder="Nombre" required />
+              <input type="email" id="emailInput" name="email" placeholder="Correo electrónico" required />
+              <input type="text" id="companyInput" name="empresa" placeholder="Empresa o tipo de proyecto" />
+              <textarea id="messageInput" name="mensaje" placeholder="Cuéntame brevemente qué necesitas" required></textarea>
+
               <button class="btn btn-primary" type="submit" data-i18n="contact_form_btn">Enviar consulta</button>
             </form>
           </div>
@@ -1658,6 +1772,7 @@
       <p>© 2026 BIM Global Studio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
       <div class="footer-links">
         <a href="#services" data-i18n="nav_services">Servicios</a>
+        <a href="#clients" data-i18n="nav_clients">Clientes</a>
         <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
         <a href="#process" data-i18n="nav_process">Proceso</a>
         <a href="#contact" data-i18n="nav_contact">Contacto</a>
@@ -1670,7 +1785,7 @@
   ========================================================== -->
   <a
     class="whatsapp-float"
-    href="https://wa.me/50600000000"
+    href="https://wa.me/50684315855"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="WhatsApp"
@@ -1726,6 +1841,7 @@
       es: {
         nav_services: "Servicios",
         nav_capabilities: "Capacidades",
+        nav_clients: "Clientes",
         nav_portfolio: "Portafolio",
         nav_process: "Proceso",
         nav_contact: "Contacto",
@@ -1770,6 +1886,9 @@
         metric_2: "Apoyo gráfico especializado para proyectos geotécnicos.",
         metric_3: "Desde planos técnicos hasta visualización y presentación.",
         metric_4: "Imagen profesional para clientes locales e internacionales.",
+        clients_eyebrow: "Clientes",
+        clients_title: "Empresas y profesionales que han confiado en nuestro trabajo",
+        clients_subtitle: "Este espacio muestra algunas marcas, aliados y clientes con los que hemos colaborado.",
         portfolio_eyebrow: "Portafolio",
         portfolio_title: "Áreas donde tu experiencia puede presentarse con fuerza",
         portfolio_subtitle: "Luego aquí sustituimos estas imágenes por proyectos tuyos reales, renders, capturas de Revit, detalles o láminas.",
@@ -1800,7 +1919,7 @@
         cta_btn_2: "Ver portafolio",
         contact_eyebrow: "Contacto",
         contact_title: "Conversemos sobre tu próximo proyecto",
-        contact_subtitle: "Personaliza aquí tu correo, tu WhatsApp y tu ubicación de trabajo.",
+        contact_subtitle: "Escríbenos y recibe una respuesta por correo o WhatsApp.",
         contact_info_title: "Información de contacto",
         contact_info_text: "Disponible para colaborar en proyectos de modelado BIM, geotecnia, documentación técnica y renderizados.",
         contact_email_label: "Email",
@@ -1813,6 +1932,7 @@
       en: {
         nav_services: "Services",
         nav_capabilities: "Capabilities",
+        nav_clients: "Clients",
         nav_portfolio: "Portfolio",
         nav_process: "Process",
         nav_contact: "Contact",
@@ -1857,6 +1977,9 @@
         metric_2: "Specialized graphic support for geotechnical projects.",
         metric_3: "From technical drawings to visualization and presentation.",
         metric_4: "Professional image for local and international clients.",
+        clients_eyebrow: "Clients",
+        clients_title: "Companies and professionals who have trusted our work",
+        clients_subtitle: "This section shows some brands, partners and clients we have collaborated with.",
         portfolio_eyebrow: "Portfolio",
         portfolio_title: "Areas where your experience can be presented with strength",
         portfolio_subtitle: "Later, these images can be replaced with your real projects, renders, Revit screenshots, details or sheets.",
@@ -1887,7 +2010,7 @@
         cta_btn_2: "View portfolio",
         contact_eyebrow: "Contact",
         contact_title: "Let's talk about your next project",
-        contact_subtitle: "Customize this section with your real email, WhatsApp and work location.",
+        contact_subtitle: "Write to us and receive a reply by email or WhatsApp.",
         contact_info_title: "Contact information",
         contact_info_text: "Available to collaborate on BIM modeling, geotechnical support, technical documentation and renderings.",
         contact_email_label: "Email",
@@ -1946,16 +2069,6 @@
         setLanguage(btn.dataset.lang);
       });
     });
-
-    function handleForm(event) {
-      event.preventDefault();
-      const lang = document.documentElement.lang;
-      alert(
-        lang === "en"
-          ? "Thanks. You can now connect this form to your email, Formspree or WhatsApp."
-          : "Gracias. Ahora puedes conectar este formulario con tu correo, Formspree o WhatsApp."
-      );
-    }
   </script>
 </body>
 </html>
