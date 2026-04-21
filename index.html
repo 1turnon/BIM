@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIM Global Studio | Soluciones BIM Internacionales</title>
+  <title>BIM Global Studio | BIM, Geotecnia y Renderizados</title>
   <meta
     name="description"
-    content="BIM Global Studio ofrece modelado BIM, documentación técnica, coordinación interdisciplinaria y conversión CAD a BIM para proyectos internacionales."
+    content="Servicios de modelado BIM, documentación técnica, geotecnia, coordinación y renderizados para proyectos locales e internacionales."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,11 +27,10 @@
       --primary: #5ea0ff;
       --primary-2: #7dd3fc;
       --accent: #60a5fa;
-      --success: #8bdbb0;
       --shadow: 0 20px 60px rgba(0,0,0,0.35);
       --radius: 20px;
       --maxw: 1240px;
-      --nav-h: 82px;
+      --nav-h: 84px;
     }
 
     * {
@@ -60,8 +59,7 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
+    img, svg {
       display: block;
     }
 
@@ -84,7 +82,7 @@
 
     .section-subtitle {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       font-size: 1.02rem;
       line-height: 1.8;
       margin-bottom: 46px;
@@ -110,7 +108,6 @@
       display: inline-block;
     }
 
-    /* NAV */
     .nav-wrap {
       position: fixed;
       inset: 0 0 auto 0;
@@ -160,7 +157,6 @@
     .brand-mark::after {
       content: "";
       position: absolute;
-      inset: auto;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--primary), var(--primary-2));
       opacity: 0.9;
@@ -183,7 +179,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
       color: #d9e5f7;
     }
 
@@ -204,10 +200,6 @@
       transition: 0.25s ease;
     }
 
-    .nav-links a:hover {
-      color: #fff;
-    }
-
     .nav-links a:hover::after {
       width: 100%;
     }
@@ -215,7 +207,33 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #07111f;
     }
 
     .btn {
@@ -260,7 +278,6 @@
       cursor: pointer;
     }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       padding-top: calc(var(--nav-h) + 40px);
@@ -272,7 +289,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: center;
       gap: 60px;
     }
@@ -297,7 +314,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
       max-width: 760px;
@@ -322,36 +339,27 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
-    .hero-stats {
+    .hero-points {
       display: flex;
       flex-wrap: wrap;
-      gap: 26px;
-      margin-top: 10px;
+      gap: 14px;
     }
 
-    .stat {
-      min-width: 130px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.65rem;
-      line-height: 1;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-
-    .stat span {
-      color: var(--muted);
+    .hero-point {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dce7f8;
       font-size: 0.92rem;
     }
 
     .hero-visual {
       position: relative;
-      min-height: 580px;
+      min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -395,15 +403,15 @@
     .glass-card {
       position: relative;
       width: 100%;
-      max-width: 520px;
+      max-width: 560px;
       border-radius: 28px;
-      padding: 26px;
+      padding: 24px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
       border: 1px solid rgba(255,255,255,0.10);
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
-      transform: perspective(1400px) rotateY(-10deg) rotateX(6deg);
+      transform: perspective(1400px) rotateY(-8deg) rotateX(5deg);
       animation: cardFloat 7s ease-in-out infinite;
     }
 
@@ -417,10 +425,16 @@
     .screen-top {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 8px;
       padding: 14px 18px;
       border-bottom: 1px solid rgba(255,255,255,0.07);
       background: rgba(255,255,255,0.03);
+    }
+
+    .screen-top-left {
+      display: flex;
+      gap: 8px;
     }
 
     .dot {
@@ -430,20 +444,52 @@
       background: rgba(255,255,255,0.25);
     }
 
-    .screen-body {
-      padding: 22px;
-      display: grid;
-      gap: 18px;
+    .screen-top-title {
+      font-size: 0.82rem;
+      color: #c6d6ed;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .screen-panel {
+    .screen-body {
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .bim-toolbar,
+    .bim-panel,
+    .drawing-area,
+    .legend-row {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
-      padding: 18px;
     }
 
-    .screen-lines {
+    .bim-toolbar {
+      display: flex;
+      gap: 10px;
+      padding: 14px;
+      flex-wrap: wrap;
+    }
+
+    .tool-chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(94,160,255,0.14);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dfeaff;
+      font-size: 0.8rem;
+    }
+
+    .bim-panel {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 14px;
+    }
+
+    .mini-lines {
       display: grid;
       gap: 10px;
     }
@@ -454,33 +500,143 @@
       background: linear-gradient(90deg, rgba(94,160,255,0.55), rgba(255,255,255,0.08));
     }
 
-    .line.short { width: 42%; }
-    .line.mid { width: 68%; }
-    .line.long { width: 100%; }
+    .short { width: 38%; }
+    .mid { width: 64%; }
+    .long { width: 100%; }
 
-    .model-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .model-block {
-      aspect-ratio: 1 / 1;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
+    .diagram-box {
+      min-height: 120px;
+      border-radius: 16px;
       background:
-        linear-gradient(135deg, rgba(94,160,255,0.18), rgba(255,255,255,0.03));
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(94,160,255,0.10), rgba(125,211,252,0.03));
+      background-size: 20px 20px, 20px 20px, cover;
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    .model-block::after {
+    .diagram-box::before,
+    .diagram-box::after {
       content: "";
       position: absolute;
-      inset: 14%;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(125,211,252,0.35);
       border-radius: 10px;
+    }
+
+    .diagram-box::before {
+      left: 18px;
+      top: 18px;
+      width: 90px;
+      height: 42px;
+    }
+
+    .diagram-box::after {
+      right: 22px;
+      bottom: 18px;
+      width: 110px;
+      height: 56px;
+    }
+
+    .drawing-area {
+      height: 180px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(94,160,255,0.06), rgba(125,211,252,0.02));
+      background-size: 22px 22px, 22px 22px, cover;
+    }
+
+    .beam, .column, .soil-line, .anchor-line, .terrain-fill {
+      position: absolute;
+    }
+
+    .beam {
+      left: 18%;
+      top: 22%;
+      width: 46%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(125,211,252,0.9);
+    }
+
+    .column {
+      width: 8px;
+      height: 68px;
+      background: rgba(125,211,252,0.75);
+      border-radius: 999px;
+    }
+
+    .column.col1 {
+      left: 22%;
+      top: 22%;
+    }
+
+    .column.col2 {
+      left: 58%;
+      top: 22%;
+    }
+
+    .terrain-fill {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55%;
+      background: linear-gradient(180deg, rgba(164,126,86,0.10), rgba(164,126,86,0.22));
+      clip-path: polygon(0 35%, 100% 8%, 100% 100%, 0 100%);
+      border-top: 1px solid rgba(235, 184, 126, 0.18);
+    }
+
+    .soil-line {
+      left: 14%;
+      top: 54%;
+      width: 45%;
+      height: 4px;
+      background: rgba(255,255,255,0.24);
+      transform: rotate(-20deg);
+      transform-origin: left center;
+    }
+
+    .anchor-line {
+      width: 90px;
+      height: 2px;
+      background: #8dd4ff;
+      transform: rotate(-28deg);
+      transform-origin: left center;
+    }
+
+    .a1 { left: 38%; top: 58%; }
+    .a2 { left: 44%; top: 68%; }
+    .a3 { left: 50%; top: 78%; }
+
+    .retaining-wall {
+      position: absolute;
+      left: 32%;
+      top: 44%;
+      width: 8px;
+      height: 88px;
+      background: #dbe8f8;
+      border-radius: 999px;
+    }
+
+    .legend-row {
+      padding: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .legend-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #d8e7fa;
+      font-size: 0.8rem;
     }
 
     .floating-mini {
@@ -496,19 +652,19 @@
 
     .floating-mini.top {
       top: 60px;
-      right: -20px;
+      right: -12px;
       animation-delay: -1.3s;
     }
 
     .floating-mini.bottom {
-      bottom: 30px;
-      left: -25px;
+      bottom: 26px;
+      left: -22px;
       animation-delay: -3.5s;
     }
 
     .floating-mini strong {
       display: block;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       margin-bottom: 6px;
     }
 
@@ -517,9 +673,8 @@
       font-size: 0.9rem;
     }
 
-    /* TRUST BAR */
     .trust-bar {
-      margin-top: -36px;
+      margin-top: -30px;
       position: relative;
       z-index: 3;
     }
@@ -557,18 +712,30 @@
       font-size: 0.94rem;
     }
 
-    /* SERVICES */
-    .cards-grid {
+    .cards-grid,
+    .metrics-grid,
+    .portfolio-grid,
+    .process-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
+    }
+
+    .cards-grid,
+    .metrics-grid,
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .service-card,
     .portfolio-card,
     .process-card,
     .metric-card,
-    .contact-card {
+    .contact-card,
+    .contact-panel {
       background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 22px;
@@ -581,7 +748,7 @@
     .portfolio-card:hover,
     .process-card:hover,
     .metric-card:hover,
-    .contact-card:hover {
+    .contact-panel:hover {
       transform: translateY(-8px);
       border-color: rgba(125,211,252,0.28);
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
@@ -603,7 +770,7 @@
     .service-card h3,
     .portfolio-card h3,
     .process-card h3,
-    .contact-card h3 {
+    .contact-panel h3 {
       font-size: 1.2rem;
       margin-bottom: 12px;
       letter-spacing: -0.02em;
@@ -612,37 +779,18 @@
     .service-card p,
     .portfolio-card p,
     .process-card p,
-    .contact-card p {
+    .contact-panel p,
+    .metric-card span {
       color: var(--muted);
       line-height: 1.75;
       font-size: 0.97rem;
     }
 
-    /* METRICS */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
     .metric-card strong {
       display: block;
-      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-size: clamp(2rem, 3vw, 2.6rem);
       margin-bottom: 10px;
       letter-spacing: -0.04em;
-    }
-
-    .metric-card span {
-      color: var(--muted);
-      line-height: 1.6;
-      display: block;
-    }
-
-    /* PORTFOLIO */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
     }
 
     .portfolio-image {
@@ -674,13 +822,6 @@
       font-size: 0.85rem;
     }
 
-    /* PROCESS */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
     .process-number {
       display: inline-flex;
       width: 42px;
@@ -694,7 +835,6 @@
       color: #08111d;
     }
 
-    /* CTA */
     .cta-box {
       padding: 42px;
       border-radius: 30px;
@@ -722,19 +862,10 @@
       gap: 14px;
     }
 
-    /* CONTACT */
     .contact-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 22px;
-    }
-
-    .contact-panel {
-      padding: 32px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow);
     }
 
     .contact-list {
@@ -785,18 +916,11 @@
       color: #97a7c0;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: rgba(125,211,252,0.42);
-      background: rgba(255,255,255,0.07);
-    }
-
     .contact-form textarea {
       min-height: 150px;
       resize: vertical;
     }
 
-    /* FOOTER */
     footer {
       padding: 34px 0 48px;
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -821,7 +945,6 @@
       color: #fff;
     }
 
-    /* WHATSAPP */
     .whatsapp-float {
       position: fixed;
       right: 22px;
@@ -832,9 +955,6 @@
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, #25d366, #7df6a6);
-      color: #07111f;
-      font-size: 1.55rem;
-      font-weight: 900;
       box-shadow: 0 18px 40px rgba(37,211,102,0.30);
       z-index: 1200;
       transition: transform 0.25s ease;
@@ -844,7 +964,12 @@
       transform: translateY(-4px) scale(1.03);
     }
 
-    /* REVEAL */
+    .whatsapp-float svg {
+      width: 31px;
+      height: 31px;
+      fill: #07111f;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(34px);
@@ -870,7 +995,6 @@
       transform: translateX(0);
     }
 
-    /* BACKGROUND GRID */
     .bg-grid {
       position: absolute;
       inset: 0;
@@ -883,7 +1007,6 @@
       opacity: 0.28;
     }
 
-    /* ANIMATIONS */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-16px); }
@@ -891,14 +1014,13 @@
 
     @keyframes cardFloat {
       0%, 100% {
-        transform: perspective(1400px) rotateY(-10deg) rotateX(6deg) translateY(0px);
+        transform: perspective(1400px) rotateY(-8deg) rotateX(5deg) translateY(0px);
       }
       50% {
-        transform: perspective(1400px) rotateY(-8deg) rotateX(5deg) translateY(-10px);
+        transform: perspective(1400px) rotateY(-6deg) rotateX(4deg) translateY(-10px);
       }
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1120px) {
       .hero-grid,
       .trust-card,
@@ -923,9 +1045,11 @@
       }
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 900px) {
       .nav-links,
-      .nav-actions .btn-secondary {
+      .nav-actions .btn-secondary,
+      .nav-actions .btn-primary,
+      .lang-switch {
         display: none;
       }
 
@@ -964,16 +1088,8 @@
         text-align: left;
       }
 
-      .hero {
-        padding-top: calc(var(--nav-h) + 28px);
-      }
-
-      .hero-grid {
-        gap: 34px;
-      }
-
       .hero-visual {
-        min-height: 420px;
+        min-height: 430px;
       }
 
       .floating-mini.top,
@@ -1024,6 +1140,10 @@
         animation: float 7s ease-in-out infinite;
       }
 
+      .bim-panel {
+        grid-template-columns: 1fr;
+      }
+
       .cta-box,
       .contact-panel {
         padding: 24px;
@@ -1046,27 +1166,32 @@
         </a>
 
         <div class="nav-links">
-          <a href="#services">Servicios</a>
-          <a href="#metrics">Capacidades</a>
-          <a href="#portfolio">Portafolio</a>
-          <a href="#process">Proceso</a>
-          <a href="#contact">Contacto</a>
+          <a href="#services" data-i18n="nav_services">Servicios</a>
+          <a href="#metrics" data-i18n="nav_capabilities">Capacidades</a>
+          <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
+          <a href="#process" data-i18n="nav_process">Proceso</a>
+          <a href="#contact" data-i18n="nav_contact">Contacto</a>
         </div>
 
         <div class="nav-actions">
-          <a class="btn btn-secondary" href="#portfolio">Ver proyectos</a>
-          <a class="btn btn-primary" href="#contact">Solicitar cotización</a>
+          <div class="lang-switch" aria-label="Language switcher">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a class="btn btn-secondary" href="#portfolio" data-i18n="nav_projects">Ver proyectos</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="nav_quote">Solicitar cotización</a>
           <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
         </div>
       </nav>
 
       <div class="nav-menu-mobile" id="mobileMenu">
-        <a href="#services">Servicios</a>
-        <a href="#metrics">Capacidades</a>
-        <a href="#portfolio">Portafolio</a>
-        <a href="#process">Proceso</a>
-        <a href="#contact">Contacto</a>
-        <a class="btn btn-primary" href="#contact">Solicitar cotización</a>
+        <button class="lang-btn active" data-lang="es">Español</button>
+        <button class="lang-btn" data-lang="en">English</button>
+        <a href="#services" data-i18n="nav_services">Servicios</a>
+        <a href="#metrics" data-i18n="nav_capabilities">Capacidades</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
+        <a href="#process" data-i18n="nav_process">Proceso</a>
+        <a href="#contact" data-i18n="nav_contact">Contacto</a>
       </div>
     </div>
   </div>
@@ -1076,38 +1201,29 @@
       <div class="bg-grid"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal reveal-left">
-          <div class="hero-badge">Coordinación BIM • Documentación técnica • Entregas internacionales</div>
+          <div class="hero-badge" data-i18n="hero_badge">
+            BIM • Geotecnia • Renderizados • Documentación técnica
+          </div>
 
           <h1>
-            Ingeniería visual con
-            <span class="gradient-text">estándar internacional</span>
-            para proyectos BIM
+            <span data-i18n="hero_title_1">Soluciones técnicas con</span>
+            <span class="gradient-text" data-i18n="hero_title_2">estándar internacional</span>
+            <span data-i18n="hero_title_3">para proyectos de construcción</span>
           </h1>
 
-          <p>
-            Transformamos ideas, croquis y planos en modelos BIM claros, coordinados y listos para construcción.
-            Ofrecemos modelado, documentación técnica, conversión CAD a BIM y soporte especializado para
-            arquitectura e ingeniería con una presentación profesional y confiable.
+          <p data-i18n="hero_text">
+            Desarrollamos modelado BIM, documentación técnica, apoyo geotécnico y renderizados generales con una presentación profesional, clara y confiable para clientes locales e internacionales.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Solicitar propuesta</a>
-            <a class="btn btn-secondary" href="#services">Explorar servicios</a>
+            <a class="btn btn-primary" href="#contact" data-i18n="hero_cta_1">Solicitar propuesta</a>
+            <a class="btn btn-secondary" href="#services" data-i18n="hero_cta_2">Explorar servicios</a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>+100</strong>
-              <span>Entregables técnicos desarrollados</span>
-            </div>
-            <div class="stat">
-              <strong>Revit</strong>
-              <span>Modelado BIM y documentación</span>
-            </div>
-            <div class="stat">
-              <strong>CAD → BIM</strong>
-              <span>Conversión y optimización digital</span>
-            </div>
+          <div class="hero-points">
+            <div class="hero-point" data-i18n="hero_point_1">Modelado BIM en Revit</div>
+            <div class="hero-point" data-i18n="hero_point_2">Geotecnia y dibujo técnico</div>
+            <div class="hero-point" data-i18n="hero_point_3">Renderizados generales</div>
           </div>
         </div>
 
@@ -1119,50 +1235,62 @@
           <div class="glass-card">
             <div class="screen">
               <div class="screen-top">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <div class="screen-top-left">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="screen-top-title">BIM / GEOTECH / VISUALIZATION</div>
               </div>
+
               <div class="screen-body">
-                <div class="screen-panel">
-                  <div class="screen-lines">
+                <div class="bim-toolbar">
+                  <span class="tool-chip">Revit</span>
+                  <span class="tool-chip">BIM</span>
+                  <span class="tool-chip">Geotech</span>
+                  <span class="tool-chip">Renders</span>
+                </div>
+
+                <div class="bim-panel">
+                  <div class="mini-lines">
                     <div class="line short"></div>
                     <div class="line long"></div>
                     <div class="line mid"></div>
-                  </div>
-                </div>
-                <div class="screen-panel">
-                  <div class="screen-lines">
-                    <div class="line mid"></div>
-                  </div>
-                  <div class="model-grid">
-                    <div class="model-block"></div>
-                    <div class="model-block"></div>
-                    <div class="model-block"></div>
-                    <div class="model-block"></div>
-                    <div class="model-block"></div>
-                    <div class="model-block"></div>
-                  </div>
-                </div>
-                <div class="screen-panel">
-                  <div class="screen-lines">
                     <div class="line long"></div>
-                    <div class="line mid"></div>
                     <div class="line short"></div>
                   </div>
+                  <div class="diagram-box"></div>
+                </div>
+
+                <div class="drawing-area">
+                  <div class="beam"></div>
+                  <div class="column col1"></div>
+                  <div class="column col2"></div>
+                  <div class="terrain-fill"></div>
+                  <div class="retaining-wall"></div>
+                  <div class="soil-line"></div>
+                  <div class="anchor-line a1"></div>
+                  <div class="anchor-line a2"></div>
+                  <div class="anchor-line a3"></div>
+                </div>
+
+                <div class="legend-row">
+                  <span class="legend-pill">Technical Drawings</span>
+                  <span class="legend-pill">Retaining Systems</span>
+                  <span class="legend-pill">BIM Modeling</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="floating-mini top">
-            <strong>Precisión técnica</strong>
-            <span>Modelado y documentación clara para ejecución</span>
+            <strong data-i18n="float_1_title">Coordinación técnica</strong>
+            <span data-i18n="float_1_text">Información gráfica clara para decisiones más rápidas</span>
           </div>
 
           <div class="floating-mini bottom">
-            <strong>Entrega profesional</strong>
-            <span>Presentación corporativa, orden y consistencia visual</span>
+            <strong data-i18n="float_2_title">Imagen profesional</strong>
+            <span data-i18n="float_2_text">Presentación sólida para clientes y equipos internacionales</span>
           </div>
         </div>
       </div>
@@ -1172,21 +1300,20 @@
       <div class="container">
         <div class="trust-card reveal">
           <div class="trust-copy">
-            <div class="eyebrow">Enfoque</div>
-            <h2 style="font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 14px; letter-spacing: -0.03em;">
-              Un aliado técnico para proyectos que necesitan orden, precisión y buena presentación
+            <div class="eyebrow" data-i18n="trust_eyebrow">Enfoque</div>
+            <h2 style="font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 14px; letter-spacing: -0.03em;" data-i18n="trust_title">
+              Un aliado técnico para BIM, geotecnia y visualización de proyectos
             </h2>
-            <p>
-              Trabajamos con una visión integral: calidad gráfica, lógica constructiva, consistencia documental
-              y soporte BIM orientado a resultados. Ideal para oficinas, consultores y equipos que quieren entregar mejor.
+            <p data-i18n="trust_text">
+              Combinamos criterio técnico, presentación corporativa y soporte gráfico para entregar documentación útil, legible y alineada con estándares profesionales.
             </p>
           </div>
 
           <div class="trust-points">
-            <div class="trust-pill">Modelado BIM en Revit</div>
-            <div class="trust-pill">Documentación técnica</div>
-            <div class="trust-pill">Coordinación interdisciplinaria</div>
-            <div class="trust-pill">Conversión CAD a BIM</div>
+            <div class="trust-pill" data-i18n="trust_pill_1">Modelado BIM</div>
+            <div class="trust-pill" data-i18n="trust_pill_2">Geotecnia</div>
+            <div class="trust-pill" data-i18n="trust_pill_3">Planos y detalles</div>
+            <div class="trust-pill" data-i18n="trust_pill_4">Renderizados</div>
           </div>
         </div>
       </div>
@@ -1194,43 +1321,44 @@
 
     <section class="section" id="services">
       <div class="container">
-        <div class="eyebrow reveal">Servicios</div>
-        <h2 class="section-title reveal">Soluciones BIM para oficinas, desarrolladores y consultores</h2>
-        <p class="section-subtitle reveal">
-          Diseñamos un flujo de trabajo eficiente para convertir información dispersa en documentación técnica clara,
-          útil y alineada con estándares de proyecto.
+        <div class="eyebrow reveal" data-i18n="services_eyebrow">Servicios</div>
+        <h2 class="section-title reveal" data-i18n="services_title">
+          Servicios especializados para construcción, ingeniería y presentación visual
+        </h2>
+        <p class="section-subtitle reveal" data-i18n="services_subtitle">
+          Estructuramos la información del proyecto para convertirla en entregables técnicos más claros, más consistentes y mejor presentados.
         </p>
 
         <div class="cards-grid">
           <article class="service-card reveal">
             <div class="icon-box">▣</div>
-            <h3>Modelado BIM</h3>
-            <p>
-              Desarrollo de modelos en Revit con enfoque en orden geométrico, claridad constructiva y base sólida para documentación.
+            <h3 data-i18n="service_1_title">Modelado BIM</h3>
+            <p data-i18n="service_1_text">
+              Desarrollo de modelos BIM en Revit con enfoque en claridad geométrica, orden documental y soporte técnico.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">⛏</div>
+            <h3 data-i18n="service_2_title">Geotecnia</h3>
+            <p data-i18n="service_2_text">
+              Apoyo gráfico y técnico para soluciones geotécnicas, detalles constructivos, muros, anclajes y documentación asociada.
             </p>
           </article>
 
           <article class="service-card reveal">
             <div class="icon-box">⌘</div>
-            <h3>Documentación técnica</h3>
-            <p>
-              Producción de planos, láminas, detalles y entregables listos para revisión, coordinación o construcción.
+            <h3 data-i18n="service_3_title">Documentación técnica</h3>
+            <p data-i18n="service_3_text">
+              Producción de planos, detalles, láminas y material técnico listo para revisión, coordinación o construcción.
             </p>
           </article>
 
           <article class="service-card reveal">
-            <div class="icon-box">⇄</div>
-            <h3>Conversión CAD → BIM</h3>
-            <p>
-              Migración de información 2D a un entorno BIM más ordenado, editable y preparado para escalabilidad.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">◎</div>
-            <h3>Coordinación y revisión</h3>
-            <p>
-              Detección de inconsistencias, limpieza documental y soporte gráfico para mejorar la lectura del proyecto.
+            <div class="icon-box">◈</div>
+            <h3 data-i18n="service_4_title">Renderizados generales</h3>
+            <p data-i18n="service_4_text">
+              Imágenes y visualizaciones para comunicar mejor la intención del proyecto con una presentación más atractiva.
             </p>
           </article>
         </div>
@@ -1239,29 +1367,30 @@
 
     <section class="section" id="metrics">
       <div class="container">
-        <div class="eyebrow reveal">Capacidades</div>
-        <h2 class="section-title reveal">Una estructura de trabajo pensada para entregar con confianza</h2>
-        <p class="section-subtitle reveal">
-          Más allá del modelado, cuidamos la presentación, la legibilidad y la lógica del proyecto para que cada entrega
-          se vea seria, técnica y bien resuelta.
+        <div class="eyebrow reveal" data-i18n="metrics_eyebrow">Capacidades</div>
+        <h2 class="section-title reveal" data-i18n="metrics_title">
+          Una estructura de trabajo enfocada en precisión, lectura y presentación
+        </h2>
+        <p class="section-subtitle reveal" data-i18n="metrics_subtitle">
+          Cuidamos tanto la parte técnica como la visual para que el proyecto se vea sólido frente a clientes, consultores y equipos de obra.
         </p>
 
         <div class="metrics-grid">
           <div class="metric-card reveal">
-            <strong>3D + 2D</strong>
-            <span>Pasamos del modelo a la lámina con coherencia visual y técnica.</span>
+            <strong>BIM</strong>
+            <span data-i18n="metric_1">Modelos y documentación con una base clara y escalable.</span>
           </div>
           <div class="metric-card reveal">
-            <strong>Precisión</strong>
-            <span>Orden documental y criterios consistentes para revisiones más ágiles.</span>
+            <strong>Geo</strong>
+            <span data-i18n="metric_2">Apoyo gráfico especializado para proyectos geotécnicos.</span>
           </div>
           <div class="metric-card reveal">
-            <strong>Escalable</strong>
-            <span>Flujo adaptable para distintos tipos y tamaños de proyecto.</span>
+            <strong>2D + 3D</strong>
+            <span data-i18n="metric_3">Desde planos técnicos hasta visualización y presentación.</span>
           </div>
           <div class="metric-card reveal">
-            <strong>Profesional</strong>
-            <span>Presentación más corporativa para clientes, socios y equipos técnicos.</span>
+            <strong>Global</strong>
+            <span data-i18n="metric_4">Imagen profesional para clientes locales e internacionales.</span>
           </div>
         </div>
       </div>
@@ -1269,53 +1398,46 @@
 
     <section class="section" id="portfolio">
       <div class="container">
-        <div class="eyebrow reveal">Portafolio</div>
-        <h2 class="section-title reveal">Aplicaciones visuales para distintas necesidades del proyecto</h2>
-        <p class="section-subtitle reveal">
-          Esta sección puede reemplazarse luego por tus renders, capturas de Revit, detalles constructivos o imágenes de proyectos reales.
+        <div class="eyebrow reveal" data-i18n="portfolio_eyebrow">Portafolio</div>
+        <h2 class="section-title reveal" data-i18n="portfolio_title">
+          Áreas donde tu experiencia puede presentarse con fuerza
+        </h2>
+        <p class="section-subtitle reveal" data-i18n="portfolio_subtitle">
+          Luego aquí sustituimos estas imágenes por proyectos tuyos reales, renders, capturas de Revit, detalles o láminas.
         </p>
 
         <div class="portfolio-grid">
           <article class="portfolio-card reveal">
-            <div
-              class="portfolio-image"
-              style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.08), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80');">
-            </div>
-            <h3>Modelado arquitectónico</h3>
-            <p>
-              Organización espacial, lectura clara del proyecto y documentación limpia para etapas de diseño o construcción.
+            <div class="portfolio-image" style="background-image:
+              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
+              url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80');"></div>
+            <h3 data-i18n="portfolio_1_title">BIM y modelado técnico</h3>
+            <p data-i18n="portfolio_1_text">
+              Modelos orientados a documentación, coordinación y lectura clara del proyecto.
             </p>
-            <span class="portfolio-tag">Arquitectura BIM</span>
+            <span class="portfolio-tag" data-i18n="portfolio_1_tag">Modelado BIM</span>
           </article>
 
           <article class="portfolio-card reveal">
-            <div
-              class="portfolio-image"
-              style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.08), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');">
-            </div>
-            <h3>Planos y detalles técnicos</h3>
-            <p>
-              Entregables estructurados para revisión técnica, aprobación interna o coordinación entre disciplinas.
+            <div class="portfolio-image" style="background-image:
+              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
+              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');"></div>
+            <h3 data-i18n="portfolio_2_title">Geotecnia y soluciones constructivas</h3>
+            <p data-i18n="portfolio_2_text">
+              Apoyo visual para muros, anclajes, detalles y documentación de ingeniería.
             </p>
-            <span class="portfolio-tag">Documentación</span>
+            <span class="portfolio-tag" data-i18n="portfolio_2_tag">Geotecnia</span>
           </article>
 
           <article class="portfolio-card reveal">
-            <div
-              class="portfolio-image"
-              style="background-image:
-              linear-gradient(180deg, rgba(5,10,18,0.08), rgba(5,10,18,0.35)),
-              url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80');">
-            </div>
-            <h3>Conversión y coordinación BIM</h3>
-            <p>
-              Evolución de información dispersa hacia un entorno coordinado, más útil para decisiones y cambios futuros.
+            <div class="portfolio-image" style="background-image:
+              linear-gradient(180deg, rgba(5,10,18,0.10), rgba(5,10,18,0.35)),
+              url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80');"></div>
+            <h3 data-i18n="portfolio_3_title">Renderizados y visualización</h3>
+            <p data-i18n="portfolio_3_text">
+              Presentaciones visuales para mostrar mejor el valor del proyecto.
             </p>
-            <span class="portfolio-tag">Coordinación BIM</span>
+            <span class="portfolio-tag" data-i18n="portfolio_3_tag">Renderizados</span>
           </article>
         </div>
       </div>
@@ -1323,42 +1445,42 @@
 
     <section class="section" id="process">
       <div class="container">
-        <div class="eyebrow reveal">Proceso</div>
-        <h2 class="section-title reveal">Cómo trabajamos cada proyecto</h2>
-        <p class="section-subtitle reveal">
-          Un flujo claro mejora tiempos, reduce retrabajos y facilita que el cliente entienda en qué etapa está cada entrega.
+        <div class="eyebrow reveal" data-i18n="process_eyebrow">Proceso</div>
+        <h2 class="section-title reveal" data-i18n="process_title">Cómo se desarrolla cada colaboración</h2>
+        <p class="section-subtitle reveal" data-i18n="process_subtitle">
+          Un proceso claro transmite confianza y ayuda a que cada entrega tenga una estructura profesional.
         </p>
 
         <div class="process-grid">
           <article class="process-card reveal">
             <div class="process-number">1</div>
-            <h3>Diagnóstico</h3>
-            <p>
-              Revisamos alcance, estado del material disponible, objetivos del proyecto y prioridades de entrega.
+            <h3 data-i18n="process_1_title">Diagnóstico</h3>
+            <p data-i18n="process_1_text">
+              Revisamos alcance, tipo de proyecto, material disponible y prioridades técnicas.
             </p>
           </article>
 
           <article class="process-card reveal">
             <div class="process-number">2</div>
-            <h3>Estructuración</h3>
-            <p>
-              Organizamos el flujo BIM, criterios de modelado y estrategia de documentación según el alcance.
+            <h3 data-i18n="process_2_title">Estrategia</h3>
+            <p data-i18n="process_2_text">
+              Definimos el flujo de trabajo, estructura documental y nivel de desarrollo necesario.
             </p>
           </article>
 
           <article class="process-card reveal">
             <div class="process-number">3</div>
-            <h3>Desarrollo</h3>
-            <p>
-              Ejecutamos el modelo, producimos documentación y afinamos lectura gráfica con enfoque profesional.
+            <h3 data-i18n="process_3_title">Desarrollo</h3>
+            <p data-i18n="process_3_text">
+              Ejecutamos el modelado, los planos o las visualizaciones con enfoque técnico y orden visual.
             </p>
           </article>
 
           <article class="process-card reveal">
             <div class="process-number">4</div>
-            <h3>Entrega</h3>
-            <p>
-              Consolidamos archivos y emitimos la información de forma clara, ordenada y lista para uso real.
+            <h3 data-i18n="process_4_title">Entrega</h3>
+            <p data-i18n="process_4_text">
+              Consolidamos el material final para revisión, presentación o uso constructivo.
             </p>
           </article>
         </div>
@@ -1369,18 +1491,17 @@
       <div class="container">
         <div class="cta-box reveal">
           <div>
-            <div class="eyebrow">Trabajemos juntos</div>
-            <h2 class="section-title" style="margin-bottom: 14px;">
-              ¿Buscas una imagen más sólida y profesional para tus entregas BIM?
+            <div class="eyebrow" data-i18n="cta_eyebrow">Trabajemos juntos</div>
+            <h2 class="section-title" style="margin-bottom: 14px;" data-i18n="cta_title">
+              Lleva tus proyectos BIM, geotécnicos y visuales a una presentación más sólida
             </h2>
-            <p>
-              Podemos ayudarte a transformar tu información en una presentación técnica más clara,
-              más limpia y más confiable para clientes, oficinas o equipos de construcción.
+            <p data-i18n="cta_text">
+              Ya sea para modelado, documentación técnica, apoyo geotécnico o renderizados, la meta es la misma: una entrega clara, profesional y confiable.
             </p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="#contact">Solicitar cotización</a>
-            <a class="btn btn-secondary" href="#portfolio">Ver portafolio</a>
+            <a class="btn btn-primary" href="#contact" data-i18n="cta_btn_1">Solicitar cotización</a>
+            <a class="btn btn-secondary" href="#portfolio" data-i18n="cta_btn_2">Ver portafolio</a>
           </div>
         </div>
       </div>
@@ -1388,22 +1509,22 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="eyebrow reveal">Contacto</div>
-        <h2 class="section-title reveal">Conversemos sobre tu próximo proyecto</h2>
-        <p class="section-subtitle reveal">
-          Personaliza esta sección con tu correo real, tu WhatsApp y tu ubicación o cobertura de servicios.
+        <div class="eyebrow reveal" data-i18n="contact_eyebrow">Contacto</div>
+        <h2 class="section-title reveal" data-i18n="contact_title">Conversemos sobre tu próximo proyecto</h2>
+        <p class="section-subtitle reveal" data-i18n="contact_subtitle">
+          Personaliza aquí tu correo, tu WhatsApp y tu ubicación de trabajo.
         </p>
 
         <div class="contact-grid">
           <div class="contact-panel reveal">
-            <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Información de contacto</h3>
-            <p style="color: var(--muted); line-height: 1.8;">
-              Estoy disponible para colaborar en proyectos BIM, documentación técnica, modelado y desarrollo gráfico profesional.
+            <h3 data-i18n="contact_info_title">Información de contacto</h3>
+            <p data-i18n="contact_info_text">
+              Disponible para colaborar en proyectos de modelado BIM, geotecnia, documentación técnica y renderizados.
             </p>
 
             <div class="contact-list">
               <div class="contact-item">
-                <small>Email</small>
+                <small data-i18n="contact_email_label">Email</small>
                 <a href="mailto:tuemail@email.com">tuemail@email.com</a>
               </div>
 
@@ -1415,20 +1536,20 @@
               </div>
 
               <div class="contact-item">
-                <small>Ubicación</small>
-                <strong>Costa Rica · Servicios remotos e internacionales</strong>
+                <small data-i18n="contact_location_label">Ubicación</small>
+                <strong data-i18n="contact_location_value">Costa Rica · Servicios remotos e internacionales</strong>
               </div>
             </div>
           </div>
 
           <div class="contact-panel reveal">
-            <h3 style="font-size: 1.6rem; margin-bottom: 18px;">Solicita una propuesta</h3>
+            <h3 data-i18n="contact_form_title">Solicita una propuesta</h3>
             <form class="contact-form" onsubmit="handleForm(event)">
-              <input type="text" placeholder="Nombre" required />
-              <input type="email" placeholder="Correo electrónico" required />
-              <input type="text" placeholder="Empresa o tipo de proyecto" />
-              <textarea placeholder="Cuéntame brevemente qué necesitas"></textarea>
-              <button class="btn btn-primary" type="submit">Enviar consulta</button>
+              <input type="text" id="nameInput" placeholder="Nombre" required />
+              <input type="email" id="emailInput" placeholder="Correo electrónico" required />
+              <input type="text" id="companyInput" placeholder="Empresa o tipo de proyecto" />
+              <textarea id="messageInput" placeholder="Cuéntame brevemente qué necesitas"></textarea>
+              <button class="btn btn-primary" type="submit" data-i18n="contact_form_btn">Enviar consulta</button>
             </form>
           </div>
         </div>
@@ -1438,12 +1559,12 @@
 
   <footer>
     <div class="container footer-row">
-      <p>© 2026 BIM Global Studio. Todos los derechos reservados.</p>
+      <p>© 2026 BIM Global Studio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
       <div class="footer-links">
-        <a href="#services">Servicios</a>
-        <a href="#portfolio">Portafolio</a>
-        <a href="#process">Proceso</a>
-        <a href="#contact">Contacto</a>
+        <a href="#services" data-i18n="nav_services">Servicios</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
+        <a href="#process" data-i18n="nav_process">Proceso</a>
+        <a href="#contact" data-i18n="nav_contact">Contacto</a>
       </div>
     </div>
   </footer>
@@ -1456,7 +1577,9 @@
     aria-label="WhatsApp"
     title="WhatsApp"
   >
-    ✆
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.37c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.19.29-.75.95-.92 1.15-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.37-1.48-.88-.78-1.47-1.75-1.64-2.04-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.07-.15-.65-1.56-.9-2.14-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.49.07-.75.34-.25.27-.97.95-.97 2.32 0 1.36.99 2.68 1.12 2.87.14.19 1.94 2.96 4.69 4.15.66.29 1.18.46 1.59.58.67.21 1.28.18 1.76.11.54-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.56-.34M16.03 4.8c-6.18 0-11.2 5.02-11.2 11.2 0 1.96.51 3.87 1.48 5.56L4 28l6.62-2.17a11.18 11.18 0 0 0 5.4 1.38h.01c6.18 0 11.2-5.02 11.2-11.2S22.21 4.8 16.03 4.8m0 20.39h-.01a9.13 9.13 0 0 1-4.65-1.27l-.33-.2-3.93 1.29 1.28-3.83-.21-.34a9.16 9.16 0 0 1-1.41-4.84c0-5.05 4.11-9.16 9.17-9.16 2.44 0 4.73.95 6.45 2.67a9.08 9.08 0 0 1 2.68 6.49c0 5.05-4.11 9.16-9.16 9.16"/>
+    </svg>
   </a>
 
   <script>
@@ -1464,6 +1587,7 @@
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const revealElements = document.querySelectorAll(".reveal");
+    const langButtons = document.querySelectorAll(".lang-btn");
 
     window.addEventListener("scroll", () => {
       if (window.scrollY > 30) {
@@ -1490,15 +1614,241 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.12
-    });
+    }, { threshold: 0.12 });
 
     revealElements.forEach(el => observer.observe(el));
 
+    const translations = {
+      es: {
+        nav_services: "Servicios",
+        nav_capabilities: "Capacidades",
+        nav_portfolio: "Portafolio",
+        nav_process: "Proceso",
+        nav_contact: "Contacto",
+        nav_projects: "Ver proyectos",
+        nav_quote: "Solicitar cotización",
+        hero_badge: "BIM • Geotecnia • Renderizados • Documentación técnica",
+        hero_title_1: "Soluciones técnicas con",
+        hero_title_2: "estándar internacional",
+        hero_title_3: "para proyectos de construcción",
+        hero_text: "Desarrollamos modelado BIM, documentación técnica, apoyo geotécnico y renderizados generales con una presentación profesional, clara y confiable para clientes locales e internacionales.",
+        hero_cta_1: "Solicitar propuesta",
+        hero_cta_2: "Explorar servicios",
+        hero_point_1: "Modelado BIM en Revit",
+        hero_point_2: "Geotecnia y dibujo técnico",
+        hero_point_3: "Renderizados generales",
+        float_1_title: "Coordinación técnica",
+        float_1_text: "Información gráfica clara para decisiones más rápidas",
+        float_2_title: "Imagen profesional",
+        float_2_text: "Presentación sólida para clientes y equipos internacionales",
+        trust_eyebrow: "Enfoque",
+        trust_title: "Un aliado técnico para BIM, geotecnia y visualización de proyectos",
+        trust_text: "Combinamos criterio técnico, presentación corporativa y soporte gráfico para entregar documentación útil, legible y alineada con estándares profesionales.",
+        trust_pill_1: "Modelado BIM",
+        trust_pill_2: "Geotecnia",
+        trust_pill_3: "Planos y detalles",
+        trust_pill_4: "Renderizados",
+        services_eyebrow: "Servicios",
+        services_title: "Servicios especializados para construcción, ingeniería y presentación visual",
+        services_subtitle: "Estructuramos la información del proyecto para convertirla en entregables técnicos más claros, más consistentes y mejor presentados.",
+        service_1_title: "Modelado BIM",
+        service_1_text: "Desarrollo de modelos BIM en Revit con enfoque en claridad geométrica, orden documental y soporte técnico.",
+        service_2_title: "Geotecnia",
+        service_2_text: "Apoyo gráfico y técnico para soluciones geotécnicas, detalles constructivos, muros, anclajes y documentación asociada.",
+        service_3_title: "Documentación técnica",
+        service_3_text: "Producción de planos, detalles, láminas y material técnico listo para revisión, coordinación o construcción.",
+        service_4_title: "Renderizados generales",
+        service_4_text: "Imágenes y visualizaciones para comunicar mejor la intención del proyecto con una presentación más atractiva.",
+        metrics_eyebrow: "Capacidades",
+        metrics_title: "Una estructura de trabajo enfocada en precisión, lectura y presentación",
+        metrics_subtitle: "Cuidamos tanto la parte técnica como la visual para que el proyecto se vea sólido frente a clientes, consultores y equipos de obra.",
+        metric_1: "Modelos y documentación con una base clara y escalable.",
+        metric_2: "Apoyo gráfico especializado para proyectos geotécnicos.",
+        metric_3: "Desde planos técnicos hasta visualización y presentación.",
+        metric_4: "Imagen profesional para clientes locales e internacionales.",
+        portfolio_eyebrow: "Portafolio",
+        portfolio_title: "Áreas donde tu experiencia puede presentarse con fuerza",
+        portfolio_subtitle: "Luego aquí sustituimos estas imágenes por proyectos tuyos reales, renders, capturas de Revit, detalles o láminas.",
+        portfolio_1_title: "BIM y modelado técnico",
+        portfolio_1_text: "Modelos orientados a documentación, coordinación y lectura clara del proyecto.",
+        portfolio_1_tag: "Modelado BIM",
+        portfolio_2_title: "Geotecnia y soluciones constructivas",
+        portfolio_2_text: "Apoyo visual para muros, anclajes, detalles y documentación de ingeniería.",
+        portfolio_2_tag: "Geotecnia",
+        portfolio_3_title: "Renderizados y visualización",
+        portfolio_3_text: "Presentaciones visuales para mostrar mejor el valor del proyecto.",
+        portfolio_3_tag: "Renderizados",
+        process_eyebrow: "Proceso",
+        process_title: "Cómo se desarrolla cada colaboración",
+        process_subtitle: "Un proceso claro transmite confianza y ayuda a que cada entrega tenga una estructura profesional.",
+        process_1_title: "Diagnóstico",
+        process_1_text: "Revisamos alcance, tipo de proyecto, material disponible y prioridades técnicas.",
+        process_2_title: "Estrategia",
+        process_2_text: "Definimos el flujo de trabajo, estructura documental y nivel de desarrollo necesario.",
+        process_3_title: "Desarrollo",
+        process_3_text: "Ejecutamos el modelado, los planos o las visualizaciones con enfoque técnico y orden visual.",
+        process_4_title: "Entrega",
+        process_4_text: "Consolidamos el material final para revisión, presentación o uso constructivo.",
+        cta_eyebrow: "Trabajemos juntos",
+        cta_title: "Lleva tus proyectos BIM, geotécnicos y visuales a una presentación más sólida",
+        cta_text: "Ya sea para modelado, documentación técnica, apoyo geotécnico o renderizados, la meta es la misma: una entrega clara, profesional y confiable.",
+        cta_btn_1: "Solicitar cotización",
+        cta_btn_2: "Ver portafolio",
+        contact_eyebrow: "Contacto",
+        contact_title: "Conversemos sobre tu próximo proyecto",
+        contact_subtitle: "Personaliza aquí tu correo, tu WhatsApp y tu ubicación de trabajo.",
+        contact_info_title: "Información de contacto",
+        contact_info_text: "Disponible para colaborar en proyectos de modelado BIM, geotecnia, documentación técnica y renderizados.",
+        contact_email_label: "Email",
+        contact_location_label: "Ubicación",
+        contact_location_value: "Costa Rica · Servicios remotos e internacionales",
+        contact_form_title: "Solicita una propuesta",
+        contact_form_btn: "Enviar consulta",
+        footer_rights: "Todos los derechos reservados."
+      },
+      en: {
+        nav_services: "Services",
+        nav_capabilities: "Capabilities",
+        nav_portfolio: "Portfolio",
+        nav_process: "Process",
+        nav_contact: "Contact",
+        nav_projects: "View projects",
+        nav_quote: "Request a quote",
+        hero_badge: "BIM • Geotechnical • Renderings • Technical Documentation",
+        hero_title_1: "Technical solutions with",
+        hero_title_2: "international standards",
+        hero_title_3: "for construction projects",
+        hero_text: "We deliver BIM modeling, technical documentation, geotechnical support and general renderings with a professional, clear and reliable presentation for local and international clients.",
+        hero_cta_1: "Request proposal",
+        hero_cta_2: "Explore services",
+        hero_point_1: "BIM modeling in Revit",
+        hero_point_2: "Geotechnical drafting support",
+        hero_point_3: "General renderings",
+        float_1_title: "Technical coordination",
+        float_1_text: "Clear graphic information for faster decisions",
+        float_2_title: "Professional image",
+        float_2_text: "Strong presentation for international clients and teams",
+        trust_eyebrow: "Approach",
+        trust_title: "A technical partner for BIM, geotechnical and project visualization",
+        trust_text: "We combine technical judgment, corporate presentation and graphic support to deliver documentation that is useful, legible and aligned with professional standards.",
+        trust_pill_1: "BIM modeling",
+        trust_pill_2: "Geotechnical support",
+        trust_pill_3: "Plans and details",
+        trust_pill_4: "Renderings",
+        services_eyebrow: "Services",
+        services_title: "Specialized services for construction, engineering and visual presentation",
+        services_subtitle: "We structure project information into clearer, more consistent and better presented technical deliverables.",
+        service_1_title: "BIM Modeling",
+        service_1_text: "Revit-based BIM development focused on geometric clarity, document order and technical support.",
+        service_2_title: "Geotechnical",
+        service_2_text: "Graphic and technical support for geotechnical solutions, construction details, retaining walls, anchors and related documentation.",
+        service_3_title: "Technical documentation",
+        service_3_text: "Production of plans, details, sheets and technical material ready for review, coordination or construction.",
+        service_4_title: "General renderings",
+        service_4_text: "Images and visualizations that communicate project intent with a stronger presentation.",
+        metrics_eyebrow: "Capabilities",
+        metrics_title: "A workflow focused on precision, readability and presentation",
+        metrics_subtitle: "We take care of both the technical and visual side so the project feels solid to clients, consultants and site teams.",
+        metric_1: "Models and documentation built on a clear and scalable base.",
+        metric_2: "Specialized graphic support for geotechnical projects.",
+        metric_3: "From technical drawings to visualization and presentation.",
+        metric_4: "Professional image for local and international clients.",
+        portfolio_eyebrow: "Portfolio",
+        portfolio_title: "Areas where your experience can be presented with strength",
+        portfolio_subtitle: "Later, these images can be replaced with your real projects, renders, Revit screenshots, details or sheets.",
+        portfolio_1_title: "BIM and technical modeling",
+        portfolio_1_text: "Models focused on documentation, coordination and project clarity.",
+        portfolio_1_tag: "BIM Modeling",
+        portfolio_2_title: "Geotechnical and construction solutions",
+        portfolio_2_text: "Visual support for retaining walls, anchors, details and engineering documentation.",
+        portfolio_2_tag: "Geotechnical",
+        portfolio_3_title: "Renderings and visualization",
+        portfolio_3_text: "Visual presentations that communicate project value more effectively.",
+        portfolio_3_tag: "Renderings",
+        process_eyebrow: "Process",
+        process_title: "How each collaboration is developed",
+        process_subtitle: "A clear process builds trust and gives every deliverable a professional structure.",
+        process_1_title: "Assessment",
+        process_1_text: "We review scope, project type, available material and technical priorities.",
+        process_2_title: "Strategy",
+        process_2_text: "We define workflow, documentation structure and the needed level of development.",
+        process_3_title: "Development",
+        process_3_text: "We execute the model, drawings or visualizations with technical focus and visual order.",
+        process_4_title: "Delivery",
+        process_4_text: "We consolidate the final material for review, presentation or construction use.",
+        cta_eyebrow: "Let's work together",
+        cta_title: "Bring your BIM, geotechnical and visual projects to a stronger presentation level",
+        cta_text: "Whether for modeling, technical documentation, geotechnical support or renderings, the goal is the same: a clear, professional and reliable deliverable.",
+        cta_btn_1: "Request quote",
+        cta_btn_2: "View portfolio",
+        contact_eyebrow: "Contact",
+        contact_title: "Let's talk about your next project",
+        contact_subtitle: "Customize this section with your real email, WhatsApp and work location.",
+        contact_info_title: "Contact information",
+        contact_info_text: "Available to collaborate on BIM modeling, geotechnical support, technical documentation and renderings.",
+        contact_email_label: "Email",
+        contact_location_label: "Location",
+        contact_location_value: "Costa Rica · Remote and international services",
+        contact_form_title: "Request a proposal",
+        contact_form_btn: "Send inquiry",
+        footer_rights: "All rights reserved."
+      }
+    };
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.es;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+
+      const placeholders = {
+        es: {
+          nameInput: "Nombre",
+          emailInput: "Correo electrónico",
+          companyInput: "Empresa o tipo de proyecto",
+          messageInput: "Cuéntame brevemente qué necesitas"
+        },
+        en: {
+          nameInput: "Name",
+          emailInput: "Email address",
+          companyInput: "Company or project type",
+          messageInput: "Tell me briefly what you need"
+        }
+      };
+
+      Object.entries(placeholders[lang]).forEach(([id, value]) => {
+        const input = document.getElementById(id);
+        if (input) input.placeholder = value;
+      });
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem("site-language", lang);
+    }
+
+    const savedLang = localStorage.getItem("site-language");
+    const browserLang = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+    setLanguage(savedLang || browserLang);
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
     function handleForm(event) {
       event.preventDefault();
-      alert("Gracias. Personaliza este formulario para conectarlo con tu correo, Formspree o WhatsApp.");
+      const lang = document.documentElement.lang;
+      alert(lang === "en"
+        ? "Thanks. You can now connect this form to your email, Formspree or WhatsApp."
+        : "Gracias. Ahora puedes conectar este formulario con tu correo, Formspree o WhatsApp.");
     }
   </script>
 </body>
