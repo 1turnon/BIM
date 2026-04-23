@@ -940,11 +940,21 @@
       opacity: 0.9;
       transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     }
-
+    
+    .client-logo img {
+      max-width: 100%;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
     .client-logo:hover img {
       filter: grayscale(0%);
       opacity: 1;
       transform: scale(1.03);
+    }
+    .client-logo.vertical img {
+      max-height: 100px;
     }
 
     /* =========================================================
@@ -1549,33 +1559,44 @@
     ========================================================== -->
     <section class="section" id="clients">
       <div class="container">
-        <div class="eyebrow reveal" data-i18n="clients_eyebrow">Clientes</div>
-        <h2 class="section-title reveal" data-i18n="clients_title">
-          Empresas y profesionales que han confiado en nuestro trabajo
+        <div class="eyebrow reveal">Clientes</div>
+        <h2 class="section-title reveal">
+          Empresas y aliados con los que hemos trabajado
         </h2>
-        <p class="section-subtitle reveal" data-i18n="clients_subtitle">
-          Este espacio muestra algunas marcas, aliados y clientes con los que hemos colaborado.
+        <p class="section-subtitle reveal">
+          Experiencia colaborando con diferentes actores del sector construcción, ingeniería y desarrollo técnico.
         </p>
-
+    
         <div class="clients-grid">
+    
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-1.png" alt="Cliente 1" />
+            <img src="./assets/logos/Logotipo-vertical-shadow.png" alt="Electrificar" loading="lazy" />
           </div>
+    
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-2.png" alt="Cliente 2" />
+            <img src="./assets/logos/logo_gt_constructora.svg" alt="GT Constructora" loading="lazy" />
           </div>
+    
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-3.png" alt="Cliente 3" />
+            <img src="./assets/logos/logo_nueva_imagen.jpg" alt="Cliente" loading="lazy" />
           </div>
+          
+          <div class="client-logo vertical reveal">
+            <img src="./assets/logos/Logotipo-vertical-shadow.png" alt="Electrificar" />
+          </div>
+          <!-- Espacios para futuros clientes -->
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-4.png" alt="Cliente 4" />
+            <img src="./assets/logos/cliente-4.png" alt="Cliente 4" loading="lazy" />
           </div>
+    
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-5.png" alt="Cliente 5" />
+            <img src="./assets/logos/cliente-5.png" alt="Cliente 5" loading="lazy" />
           </div>
+    
           <div class="client-logo reveal">
-            <img src="./assets/logos/cliente-6.png" alt="Cliente 6" />
+            <img src="./assets/logos/cliente-6.png" alt="Cliente 6" loading="lazy" />
           </div>
+    
         </div>
       </div>
     </section>
