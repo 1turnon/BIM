@@ -910,7 +910,7 @@
       gap: 18px;
       align-items: stretch;
     }
-
+    
     .client-logo {
       min-height: 120px;
       border-radius: 20px;
@@ -922,17 +922,18 @@
       align-items: center;
       justify-content: center;
       transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      cursor: pointer;
     }
-
+    
     .client-logo:hover {
       transform: translateY(-6px);
       border-color: rgba(125,211,252,0.28);
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
     }
     
-    .client-logo {
-      cursor: pointer;
-    }
+    /* =========================================================
+    LOGOS NORMALES
+    ========================================================== */
     .client-logo img {
       max-width: 100%;
       max-height: 56px;
@@ -941,23 +942,30 @@
       object-fit: contain;
       filter: grayscale(100%) brightness(1.15);
       opacity: 0.9;
-      transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
+      transform: scale(1); /* 🔑 base clara */
     }
+    
+    .client-logo:not(.vertical):hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05); /* 🔥 zoom normal */
+    }
+    
+    /* =========================================================
+    LOGO VERTICAL (ELECTRIFICAR)
+    ========================================================== */
     .client-logo.vertical img {
       height: 100%;
       width: auto;
       object-fit: contain;
-      transform: scale(1.5);
+      transform: scale(1.5); /* base */
+      transition: transform 0.3s ease;
     }
+    
     .client-logo.vertical:hover img {
-      transform: scale(1.75);
+      transform: scale(1.75); /* 🔥 zoom correcto */
     }
-    .client-logo:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.4);
-    }
-
     /* =========================================================
     BLOQUE 12 — PORTAFOLIO
     ========================================================== */
