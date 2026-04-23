@@ -936,18 +936,17 @@
     ========================================================== */
     .client-logo img {
       max-width: 100%;
-      max-height: 80px;
+      max-height: 70px;
       width: auto;
       height: auto;
       object-fit: contain;
-      filter: grayscale(100%) brightness(1.15);
-      opacity: 0.9;
-      transition: all 0.3s ease;
+      opacity: 0.95;
+      filter: none;
       transform: scale(1);
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
     
     .client-logo:not(.vertical):hover img {
-      filter: grayscale(0%);
       opacity: 1;
       transform: scale(1.05);
     }
@@ -959,12 +958,12 @@
       height: 100%;
       width: auto;
       object-fit: contain;
-      transform: scale(1.5); /* base */
+      transform: scale(1.5);
       transition: transform 0.3s ease;
     }
     
     .client-logo.vertical:hover img {
-      transform: scale(1.75); /* 🔥 zoom correcto */
+      transform: scale(1.75);
     }
     /* =========================================================
     BLOQUE 12 — PORTAFOLIO
@@ -1580,7 +1579,7 @@
         
           <div class="client-logo reveal">
             <a href="https://geotraesa.com" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/logos/GT.svg" alt="GT Constructora" />
+              <img src="./assets/logos/logo_gt_constructora.svg" alt="GT Constructora" loading="lazy" />
             </a>
           </div>
         
