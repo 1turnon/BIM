@@ -940,10 +940,11 @@
       opacity: 0.9;
       transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     }
-    
-    .client-logo.vertical {
-      grid-row: span 2;   /* ocupa más altura en el grid */
-      min-height: 180px;
+    .client-logo.vertical img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      transform: scale(1.6);
     }
     .client-logo:hover img {
       filter: grayscale(0%);
